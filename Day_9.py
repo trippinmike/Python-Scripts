@@ -9,12 +9,17 @@ chances = 5
 while chances > 0:
     print(f"You have {chances} left.")
     guess = int(input("Guess a number 0-10: \n"))
-    if guess == value:
-        print("Your guess is correct!")
-    else:
+    if guess > value:
+        print("Your guess is too high.")
         chances -= 1
-        print("Incorrect, try again.")
-        if chances == 0:
-            print("Game over.")
-            exit()
+    elif guess < value:
+        print("Your guess is too low.")
+        chances -= 1
+    else:
+        print("Your guess is correct!")
+        exit()
+    if chances == 0:
+        print("Game over.")
+        exit()
+
 
